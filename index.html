@@ -1,1 +1,200 @@
-<h1> Welcome to CreditYa </h1>
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CreditYa Project Overview</title>
+    <!-- Bulma CSS desde CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar is-dark">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="#">
+                CreditYa
+            </a>
+        </div>
+        <div class="navbar-menu">
+            <div class="navbar-end">
+                <a class="navbar-item" href="#overview">Overview</a>
+                <a class="navbar-item" href="#services">Services</a>
+                <a class="navbar-item" href="#tech">Stack</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero is-info is-bold">
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <h1 class="title">CreditYa</h1>
+                <h2 class="subtitle">
+                    CreditYa is a Bootcamp Project support by <strong> Pragma</strong>
+                </h2>
+            </div>
+        </div>
+    </section>
+
+    <!-- Overview -->
+    <section id="overview" class="section">
+        <div class="container">
+            <h2 class="title is-3">📌 Description</h2>
+            <p>
+                This Bootcamp has as goal to build a credit application (CreditYa), using
+                <em>Clean Architecture</em>, <em> Spring Webflux </em>, <em> Scaffold Bancolombia</em>, and <em>AWS as
+                    cloud provider </em>
+                <br>
+                Additionally as a personal challenge implement some patterns microservices like <em> Event
+                    sourcing</em>, <em>CQRS</em>, and <em>Outbox</em>. </br>
+                Despite had finished bootcamp project, the main idea is continuing to expand this project adding new
+                features, UI, and patterns microservices.
+            </p>
+        </div>
+    </section>
+
+
+    <!-- Services -->
+    <section id="services" class="section">
+        <div class="container">
+            <h2 class="title is-3">📂 Services</h2>
+
+            <!-- Auth Service -->
+            <div class="box ">
+                <article class="media">
+                    <div class="media-content">
+                        <div class="content">
+                            <p>
+                                <strong class="has-text-info">Auth Service</strong>
+                                <br>
+                                Service for handling users and roles with authentication and authorization using JWT and
+                                Spring Security.
+                            </p>
+                        </div>
+                        <nav class="level">
+                            <div class="level-left">
+                                <a href="https://github.com/HansKoder/CreditYaAuthService" class="button is-small is-info">Github Repo</a>
+                            </div>
+                        </nav>
+                    </div>
+                </article>
+            </div>
+
+            <!-- User Service -->
+            <div class="box ">
+                <article class="media">
+                    <div class="media-content">
+                        <div class="content">
+                            <p>
+                                <strong class="has-text-info">User Service</strong>
+                                <br>
+                                Handles customer data: get by document, create, validate existence. Requires
+                                authentication.
+                                Built with Scaffold Bancolombia + Webflux.
+                            </p>
+                        </div>
+                        <nav class="level">
+                            <div class="level-left">
+                                <a href="https://github.com/HansKoder/CreditYaUserService" class="button is-small is-info">Github Repo</a>
+                            </div>
+                        </nav>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Loan Service -->
+            <div class="box ">
+                <article class="media">
+                    <div class="media-content">
+                        <div class="content">
+                            <p>
+                                <strong class="has-text-info">Loan Service</strong>
+                                <br>
+                                Manages credits using Event Sourcing and CQRS with MongoDB.
+                                Includes Outbox pattern to push messages via AWS SQS.
+                            </p>
+                        </div>
+                        <nav class="level">
+                            <div class="level-left">
+                                <a href="https://github.com/HansKoder/CreditYaLoanService" class="button is-small is-info">Github Repo</a>
+                            </div>
+                        </nav>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Notification Lambda -->
+            <div class="box ">
+                <article class="media">
+                    <div class="media-content">
+                        <div class="content">
+                            <p>
+                                <strong class="has-text-success">Notification Lambda</strong>
+                                <br>
+                                Handles the notifications sending an email using SES service provided by aws service, after being resolved, loan-service pushes an event using SQS for being managed by notification lambda sending an email with the resolution of its loans
+                                
+                            </p>
+                        </div>
+                        <nav class="level">
+                            <div class="level-left">
+                                <a href="https://github.com/HansKoder/CreditYaNotificationLambda" class="button is-small is-success">Github Repo</a>
+                            </div>
+                        </nav>
+                    </div>
+                </article>
+            </div>
+            
+            <!-- Self Decision Lambda -->
+            <div class="box ">
+                <article class="media">
+                    <div class="media-content">
+                        <div class="content">
+                            <p>
+                                <strong class="has-text-success">Self Decision Lambda</strong>
+                                <br>
+                                Manages the capacity Credit, when a customer submitted a new credit of type self-decision, checks its salary base and active debts.
+                            </p>
+                        </div>
+                        <nav class="level">
+                            <div class="level-left">
+                                <a href="https://github.com/HansKoder/CreditYaAutomaticDecisionLambda" class="button is-small is-success">Github Repo</a>
+                            </div>
+                        </nav>
+                    </div>
+                </article>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Tech -->
+    <section id="tech" class="section has-background-light">
+        <div class="container">
+            <h2 class="title is-3">🛠️ Stack</h2>
+            <div class="tags are-medium">
+                <span class="tag is-info">Java</span>
+                <span class="tag is-success">Spring Webflux</span>
+                <span class="tag is-warning">Scaffold Bancolombia</span>
+                <span class="tag is-primary">CQRS</span>
+                <span class="tag is-dark">Event Sourcing</span>
+                <span class="tag is-danger">AWS</span>
+                <span class="tag is-link">Postgres</span>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>
+                Personal project made by <strong>Hans Arias</strong> · Bootcamp Pragma (Advanced Java)
+            </p>
+        </div>
+    </footer>
+</body>
+
+</html>
