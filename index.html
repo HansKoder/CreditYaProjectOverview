@@ -44,14 +44,11 @@
         <div class="container">
             <h2 class="title is-3">📌 Description</h2>
             <p>
-                This Bootcamp has as goal to build a credit application (CreditYa), using
-                <em>Clean Architecture</em>, <em> Spring Webflux </em>, <em> Scaffold Bancolombia</em>, and <em>AWS as
-                    cloud provider </em>
-                <br>
-                Additionally as a personal challenge implement some patterns microservices like <em> Event
-                    sourcing</em>, <em>CQRS</em>, and <em>Outbox</em>. </br>
-                Despite had finished bootcamp project, the main idea is continuing to expand this project adding new
-                features, UI, and patterns microservices.
+                The goal of this Bootcamp is to build a credit application (CreditYa), using Clean Architecture, Spring Webflux, Bancolombia Scaffold, and AWS as the cloud provider. 
+                </br>
+                Additionally, as a personal challenge, I decided to implement microservice patterns such as Event Sourcing, CQRS, and Outbox. 
+                </br>
+                Despite having finished the bootcamp project, the main idea is to continue expanding it by adding new features, a user interface, and more microservice patterns.
             </p>
         </div>
     </section>
@@ -134,8 +131,9 @@
                             <p>
                                 <strong class="has-text-success">Notification Lambda</strong>
                                 <br>
-                                Handles the notifications sending an email using SES service provided by aws service, after being resolved, loan-service pushes an event using SQS for being managed by notification lambda sending an email with the resolution of its loans
-                                
+                                The Notification Lambda handles customer notifications. 
+                                <br>
+                                After a loan application is reviewed by an Advisor (ROLE), the Loan Service pushes a new event to SQS. The Notification Lambda listens to this event and sends an email through AWS SES with the loan resolution.                                
                             </p>
                         </div>
                         <nav class="level">
@@ -155,7 +153,9 @@
                             <p>
                                 <strong class="has-text-success">Self Decision Lambda</strong>
                                 <br>
-                                Manages the capacity Credit, when a customer submitted a new credit of type self-decision, checks its salary base and active debts.
+                                The Self-Decision Lambda manages debt capacity. 
+                                <br>
+                                When a customer submits a self-decision credit application, it checks the customer’s salary base and active debts to determine eligibility.
                             </p>
                         </div>
                         <nav class="level">
