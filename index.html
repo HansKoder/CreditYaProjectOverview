@@ -123,6 +123,44 @@
                 </article>
             </div>
 
+            <!-- Report Service -->
+            <div class="box ">
+                <article class="media">
+                    <div class="media-content">
+                        <div class="content">
+
+                            <h2 class="has-text-info is-size-4">Report Service</h2>
+                            <p class="has-text-grey-light">This service manages the generation and retrieval of reports, 
+                                accessible exclusively to users with the ADMIN role. 
+                            </p>
+                            <h3 class="is-size-6 has-text-grey">Available reports:</h3>
+                            <ul>
+                                <li class="has-text-grey-light">
+                                    <span class="has-text-weight-bold">Approved Loans:</span> allows querying the total number and the overall sum of approved loans.
+                                </li>
+                                <li class="has-text-grey-light">
+                                    <span>System Health Check:</span>displays the status of all services that make up the application, 
+                                    such as databases (RDS, DynamoDB), containers, and other components.
+                                </li>
+                            </ul>
+                            <h3 class="is-size-6 has-text-grey">Tech Stack:</h3>
+                            <p class="has-text-grey-light">
+                                The service is built following the Clean Architecture approach, 
+                                using the Scaffold Bancolombia open-source tool.
+                                <br/>
+                                It listens to approved loan events to update a DynamoDB database, 
+                                where the number and total amount of approved loans are recorded and maintained.
+                            </p>
+                        </div>
+                        <nav class="level">
+                            <div class="level-left">
+                                <a href="https://github.com/HansKoder/CreditYaReportService" class="button is-small is-info">Github Repo</a>
+                            </div>
+                        </nav>
+                    </div>
+                </article>
+            </div>
+
             <!-- Notification Lambda -->
             <div class="box ">
                 <article class="media">
